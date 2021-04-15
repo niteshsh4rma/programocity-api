@@ -11,7 +11,12 @@ var app = express();
 
 // view engine setup
 
-app.use(cors())
+var corsOptions = {
+  origin: 'https://programocity.netlify.app/',
+  optionsSuccessStatus: 200 // For legacy browser support
+}
+
+app.use(cors(corsOptions))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

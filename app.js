@@ -9,14 +9,8 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
+app.use(cors())
 // view engine setup
-
-var corsOptions = {
-  origin: 'https://programocity.netlify.app/',
-  optionsSuccessStatus: 200 // For legacy browser support
-}
-
-app.use(cors(corsOptions))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
